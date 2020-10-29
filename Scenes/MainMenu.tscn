@@ -1,0 +1,100 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 122.0
+margin_top = 50.0
+margin_right = 200.0
+margin_bottom = 64.0
+rect_scale = Vector2( 2, 2 )
+text = "TicTacToe++"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CPUOpponentButton" type="Button" parent="."]
+margin_left = 147.0
+margin_top = 160.0
+margin_right = 253.0
+margin_bottom = 180.0
+text = "CPU Opponent"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HumanOpponentButton" type="Button" parent="."]
+margin_left = 137.0
+margin_top = 200.0
+margin_right = 263.0
+margin_bottom = 220.0
+text = "Human Opponent"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionsButton" type="Button" parent="."]
+margin_left = 155.5
+margin_top = 280.0
+margin_right = 244.5
+margin_bottom = 300.0
+text = "Instructions"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionPanel" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="InstructionPanel"]
+margin_left = 59.0
+margin_top = 13.557
+margin_right = 341.0
+margin_bottom = 384.557
+text = "Hey there! Thanks for trying out
+TicTacToe++! As you 'll soon see,
+this little game is really more a clone
+of Connect 4. I thought I was being
+clever.
+
+To place a piece, you simply 
+click the arrow at the top of the column.
+
+CPU Oppoent is exactly what it 
+sounds like. You play as red, and the
+program will play as black. Red 
+always goes first.
+
+Human Opponent is the 2-player version
+where 2 players alternate taking turns
+on the same machine. No networking
+in this little app.
+
+Thanks again for playing! Hope you have fun!
+
+-Scott"
+align = 1
+
+[node name="BackButton" type="Button" parent="InstructionPanel"]
+margin_left = 5.0
+margin_top = 375.0
+margin_right = 47.0
+margin_bottom = 395.0
+text = "Back"
+[connection signal="pressed" from="CPUOpponentButton" to="." method="_on_CPUOpponentButton_pressed"]
+[connection signal="pressed" from="HumanOpponentButton" to="." method="_on_HumanOpponentButton_pressed"]
+[connection signal="pressed" from="InstructionsButton" to="." method="_on_InstructionsButton_pressed"]
+[connection signal="pressed" from="InstructionPanel/BackButton" to="." method="_on_BackButton_pressed"]
